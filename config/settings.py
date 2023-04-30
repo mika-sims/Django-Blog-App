@@ -21,7 +21,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['django-blog-website.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['django-blog-website.herokuapp.com']
 
 
 # Application definition
@@ -100,11 +100,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': os.environ.get('DATABASE_NAME'),
-    'USER': os.environ.get('DATABASE_USER'),
-    'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-    'HOST': os.environ.get('DATABASE_HOST'),
-    'PORT': '5432',
+    'NAME': os.environ.get('RDS_DB_NAME'),
+    'USER': os.environ.get('RDS_USER'),
+    'PASSWORD': os.environ.get('RDS_PASSWORD'),
+    'HOST': os.environ.get('RDS_HOSTNAME'),
+    'PORT': os.environ.get('RDS_PORT'),
   }
 }
 
